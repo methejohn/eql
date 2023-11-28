@@ -8,6 +8,7 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
+document.addEventListener('DOMContentLoaded', function() {
 
 gsap.set('.sc-header .group-images .img-roll',{scale:1.3})
 gsap.set('.sc-header .group-images .img-roll img',{opacity:.4})
@@ -80,6 +81,7 @@ headerTl
 .to('.header .btn-area .btn-shop',{ animationPlayState: "running", },'p+=.4')
 .to('.header .btn-area .btn-contact',{ animationPlayState: "running", },'p+=.4')
 
+});
 
 
 introTl = gsap.timeline({

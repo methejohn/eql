@@ -83,6 +83,10 @@ headerTl
 
 });
 
+const btnShop = document.querySelector('.btn-shop');
+btnShop.addEventListener('click', () => {
+    window.open('https://wch.eqlstore.com/main', '_blank');
+});
 
 introTl = gsap.timeline({
     scrollTrigger:{

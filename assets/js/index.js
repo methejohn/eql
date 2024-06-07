@@ -83,11 +83,6 @@ headerTl
 
 });
 
-const btnShop = document.querySelector('.btn-shop');
-btnShop.addEventListener('click', () => {
-    window.open('https://wch.eqlstore.com/main', '_blank');
-});
-
 introTl = gsap.timeline({
     scrollTrigger:{
         trigger:'.group-introduce',
@@ -96,8 +91,7 @@ introTl = gsap.timeline({
         // markers:true,
         scrub:0,
     },
-})
-
+});
 
 gsap.set('.group-introduce .grid-shape .grid-rect',{transformOrigin:"0% 100%"})
 gsap.set('.group-introduce .box5 .text .line span',{yPercent:100})

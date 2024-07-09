@@ -484,6 +484,19 @@ $('.sc-brand .group-brand .brand-list .brand-item').hover(
 
 gsap.set('.sc-openyy .shape-move rect',{scaleX:0})
 
+const containerHeight = $(this).height();
+const shapeRect = document.querySelectorAll('.shape-rect');
+let shapeY = null;
+
+shapeRect.forEach((el, index) => {
+    el.setAttribute('height', containerHeight / 2);
+    if (index % 2 === 1) {
+        shapeY = containerHeight / 2;
+        el.setAttribute('y', shapeY);
+    }
+});
+
+
 ScrollTrigger.create({
     trigger:'.sc-openyy',
     start:"0% 80%",
@@ -498,9 +511,7 @@ ScrollTrigger.create({
         .eventCallback('onComplete', function(){
             $('.sc-openyy').mousemove(function(e){
                 const mouseY = e.offsetY;
-                console.log(mouseY);
-                const containerHeight = $(this).height();
-                console.log(containerHeight);
+                // const containerHeight = $(this).height();
                 const mouseY2 = containerHeight - e.offsetY;
                 
                 
@@ -517,7 +528,7 @@ ScrollTrigger.create({
                 })
                 gsap.to('.sc-openyy .shape-move .shape-rect:nth-child(even)',{
                     height: mouseY2,
-                    y:mouseY - 504.5,
+                    y:mouseY - shapeY,
                     duration: 0,
                 })
             })
